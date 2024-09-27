@@ -17,9 +17,9 @@ lunar_month_average = avg_days + avg_hours + avg_minutes + avg_seconds
 say interpreter_ver
 say 'Lunar month average estimated at: ' lunar_month_average
 
-say 'Please type current month'
+say 'Please enter current month:'
 parse pull current_month
-say 'Please type current day of month'
+say 'Please enter current day of month:'
 parse pull current_dayofmonth
 
 current_month = translate(current_month)
