@@ -23,6 +23,7 @@ say 'Please enter current day of month:'
 parse pull current_dayofmonth
 
 current_month = translate(current_month)
+/* init */
 current_month_short = 'na'
 error_check = 'clr'
 
