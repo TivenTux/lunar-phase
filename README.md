@@ -1,2 +1,3 @@
-# lunar-phase
-calculates lunar phases
+## lunar-phase
+
+REXX script that calculates current luna phase
