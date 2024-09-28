@@ -93,10 +93,26 @@ else if current_month = 12 | current_month_short = 'DEC' then
 else
     DO
     error_check = 'invalid_data'
+    current_month = 0
     END
 
-if current_dayofmonth > 31 then
+
+if DATATYPE(current_dayofmonth, 'N') then
+    DO
+    if current_dayofmonth < 1 | current_dayofmonth > 31 then
+        DO
+        error_check = 'invalid_data'
+        current_dayofmonth = 0
+        END
+    end
+else
+    DO
     error_check = 'invalid_data'
+    current_dayofmonth = 0
+    END
+
+
+
 
 days_after_new_year = ((current_month - 1) * (365/12)) + current_dayofmonth
 
@@ -124,4 +140,4 @@ else
 if length(error_check) >= 4 then
     say 'Invalid data, please try again.'
 else
-    say 'Moon phase for today, ' current_month_desc current_dayofmonth ': ' moon_current_phase
+    say 'Moon phase for' current_month_desc current_dayofmonth ': ' moon_current_phase
