@@ -14,8 +14,11 @@ avg_minutes = avg_minutes / (24 * 60)
 avg_seconds = avg_seconds / (60 * 60 * 24)
 
 lunar_month_average = avg_days + avg_hours + avg_minutes + avg_seconds
+say '====================================================='
 say interpreter_ver
 say 'Lunar month average estimated at: ' lunar_month_average
+say '====================================================='
+say ''
 
 say 'Please enter current month:'
 parse pull current_month
@@ -27,6 +30,7 @@ current_month = translate(current_month)
 current_month_short = 'na'
 error_check = 'clr'
 
+/* if full month str entered, produce short version */
 if length(current_month) >= 3 then
     current_month_short = substr(current_month, 1, 3)
 
@@ -104,7 +108,7 @@ if DATATYPE(current_dayofmonth, 'N') then
         error_check = 'invalid_data'
         current_dayofmonth = 0
         END
-    end
+    END
 else
     DO
     error_check = 'invalid_data'
