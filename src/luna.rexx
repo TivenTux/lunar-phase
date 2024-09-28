@@ -95,6 +95,9 @@ else
     error_check = 'invalid_data'
     END
 
+if current_dayofmonth > 31 then
+    error_check = 'invalid_data'
+
 days_after_new_year = ((current_month - 1) * (365/12)) + current_dayofmonth
 
 luna_cycles = days_after_new_year / lunar_month_average
